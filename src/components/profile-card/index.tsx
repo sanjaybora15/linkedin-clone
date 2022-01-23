@@ -10,6 +10,7 @@ interface IProps {
    connectionCount: number;
    viewsCount: number;
    profileLink: string;
+   premiumRequired: boolean;
 }
 
 const ProfileCard = (props: IProps) => {
@@ -39,12 +40,16 @@ const ProfileCard = (props: IProps) => {
                       <p>Views</p>
                   </div>
               </div>
-              <div className="upgrade-section">
-                  <p>Free access exclusive tools & insights</p>
-                  <button className="upgrade-button">
-                    UPGRADE TO PREMIUM
-                  </button>
-              </div>
+              {
+                  props.premiumRequired &&
+                    <div className="upgrade-section">
+                        <p>Free access exclusive tools & insights</p>
+                        <button className="upgrade-button">
+                            UPGRADE TO PREMIUM
+                        </button>
+                    </div>
+              }
+              
           </div>
         </React.Fragment>
     )

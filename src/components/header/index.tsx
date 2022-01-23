@@ -1,14 +1,10 @@
 import React from "react";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
-import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import ArrowDropDownCircleRoundedIcon from '@mui/icons-material/ArrowDropDownCircleRounded';
 import "./style.scss";
+import { navLinks } from "./nav-links";
 
 const Header = () => {
     return(
@@ -26,39 +22,28 @@ const Header = () => {
             <input className="search-field" type="search" placeholder="Search" aria-label="Search"/>
           </form>
           <ul className="navbar-nav mr-auto theme-navbar-items">
-            <li className="nav-item active">
-              <span className="nav-icon"><HomeOutlinedIcon /></span>
-              <span>Home</span>
-            </li>
-            <li className="nav-item">
-              <span className="nav-icon"><PeopleAltOutlinedIcon/></span>
-              <span>Network</span>
-            </li>
-            <li className="nav-item">
-              <span className="nav-icon"><ChatBubbleOutlineOutlinedIcon/></span>
-              <span>Messaging</span>
-            </li>
-            <li className="nav-item">
-              <span className="nav-icon"><NotificationsNoneOutlinedIcon/></span>
-              <span className="notification-circle"></span>
-              <span>Notifications</span>
-            </li>
-            <li className="nav-item">
-              <span className="nav-icon"><WorkOutlineOutlinedIcon/></span>
-              <span>Jobs</span>
-            </li>
-            <li className="nav-item">
-              <span className="nav-icon"><AppsOutlinedIcon/></span>
-              <span>Work</span>
-            </li>
+            {
+              navLinks.map((navItem, index) => {
+                return(
+                  <li key={index} className={`nav-item ${navItem.active ? "active" : ""}`}>
+                    <span className="nav-icon">{<navItem.icon/>}</span>
+                    {
+                      navItem.pendingItem &&
+                        <span className="notification-circle"></span>
+                    }
+                    <span>{navItem.title}</span>
+                  </li>
+                )
+              })
+            }
           </ul>
         </div>
         <div className="top-profile">
-              <div className="img-and-icon">
+            <div className="img-and-icon">
                 <span className="icon"><ArrowDropDownCircleRoundedIcon fontSize="small"/></span>
                 <img src="https://qph.fs.quoracdn.net/main-qimg-8a38a121a5ce6242e72d3bfbf276540f.webp" alt="profile-picture"/>
-              </div>
             </div>
+        </div>
     </nav>
     )
 }

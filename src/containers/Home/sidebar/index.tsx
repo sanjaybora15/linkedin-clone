@@ -13,6 +13,7 @@ const Sidebar = () => {
                 connectionCount={767}
                 viewsCount={60}
                 onEditClick={() => null}
+                premiumRequired={true}
             />
         </div>
     )

@@ -19,7 +19,7 @@ const Feeds = () => {
         new IntersectionObserver((entries) => {
             const first = entries[0];
             if (first.isIntersecting) {
-                    setPageNum((no) => no + 1);
+                setPageNum((no) => no + 1);
             }
         })
 	);
@@ -33,9 +33,7 @@ const Feeds = () => {
                     ...feedsData.data
                 ]
             })
-        } catch (error) {
-            
-        }
+        } catch (error) {}
         setLoading(false);
     }
     useEffect(() => {
@@ -49,7 +47,6 @@ const Feeds = () => {
 		if (currentElement) {
 			currentObserver.observe(currentElement);
 		}
-
 		return () => {
 			if (currentElement) {
 				currentObserver.unobserve(currentElement);

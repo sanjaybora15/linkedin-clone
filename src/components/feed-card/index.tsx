@@ -24,7 +24,7 @@ const FeedCard = (props: Props) => {
             <div className="feed-top-section">
                 <img src={props.profileImg} alt="profile-img"/>
                 <div className="name-and-desc">
-                    <h1>{props.name.slice(0,14)}</h1>
+                    <h1>{props.name}</h1>
                     <p>{props.desc}</p>
                 </div>
                 <div className="more-options">
