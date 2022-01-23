@@ -1,0 +1,24 @@
+.theme-widget {
+    flex: 0.3 1;
+    position: sticky;
+    top: 95px;
+    background-color: white;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 10px;
+    .theme-heading {
+      font-size: 1em;
+      font-weight: 600;
+      padding: 20px;
+    }
+  }
+  @media (max-width:830px)  {
+    .theme-widget {
+      flex: 0.4 1;
+    }
+  }
+  @media (max-width:480px)  {
+    .theme-widget {
+      display: none;
+    }
+  }

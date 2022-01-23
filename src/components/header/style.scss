@@ -1,0 +1,115 @@
+@import "../../app/scss/_variables.scss";
+
+.theme-nav-container {
+    height: 75px;
+    background: $white;
+    .brand-logo {
+        margin: 0 30px;
+        .icon {
+            font-size: 20px;
+        }
+    }
+    .toggler {
+        outline: none;
+        background: transparent;
+        border: none;
+        display: none;
+    }
+    .theme-navbar-items {
+        margin: 0 20px;
+        align-items: center;
+        .nav-item {
+            margin: 5px;
+            padding: 7px;
+            display: flex;
+            font-size: .9em;
+            position: relative;
+            cursor: pointer;
+            &.active {
+                color: $theme-primary;
+                font-weight: 600;
+                .nav-icon {
+                    color: $theme-primary;
+                }
+            }
+            .nav-icon {
+                color: $secondary-grey;
+                padding: 2px;
+                margin-top: -5px;
+            }
+            .notification-circle {
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                background: $theme-primary;
+                border-radius: 50%;
+                left: 30px;
+                top:-1px;
+            }
+        }
+    }
+    .form-search {
+        margin-left: 20px;
+        position: relative;
+        border-bottom: 1px solid $light-gray;
+        .search-icon {
+            position: absolute;
+            color: $secondary-grey;
+        }
+        .search-field {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding-left: 25px;
+            padding-bottom: 5px;
+        }
+    }
+    .top-profile {
+        position: relative;
+        margin-left: auto;
+        margin-right: 30px;
+        .img-and-icon {
+            position: absolute;
+            bottom: 0;
+            right: 0px;
+            top: -25px;
+            color: $theme-primary;
+            .icon {
+                position: absolute;
+                right: -10px;
+                top: 50%;
+            }
+        }
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; 
+        }
+    }
+}
+
+@media (max-width:1000px)  {
+    .theme-nav-container {
+        height: 50px;
+    }
+    .toggler {
+        display: block !important;
+    }
+    .navbar-collapse {
+        background: $white;
+            padding: 25px 0;
+            .theme-navbar-items {
+                margin: 20px 10px !important;
+                align-items: normal;
+            }
+    }
+    .top-profile {
+        position: fixed !important;
+        right: 25px;
+        top: 30px;
+        img {
+            width: 40px !important;
+            height: 40px !important;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.theme-feeds {
+    flex: 0.6 1;
+    margin: 60px 20px 0 20px;
+    .end-feed-section {
+      background-color: white;
+      display: block;
+      text-align: center;
+      font-size: 1em;
+      font-weight: 600;
+      padding: 10px;
+      margin-bottom: 5px;
+      h2 {
+        font-size: 1em;
+        font-weight: 600;
+      }
+    }
+  }
+
+
+@media (max-width:480px)  {
+  .theme-feeds {
+    flex: 1;
+    margin: 50px 10px 0 10px;
+  }
+ }

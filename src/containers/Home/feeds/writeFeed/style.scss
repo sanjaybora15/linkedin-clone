@@ -1,0 +1,41 @@
+@import "../../../../app/scss/_variables.scss";
+
+.theme-write-feed {
+    background-color: $white;
+    .theme-input-form {
+        .theme-input-field {
+            border: none;
+            border-bottom: 1px solid $light-gray;
+            padding: 20px;
+            font-size: .9em;
+            display: block;
+            width: 100%;
+            outline: none; 
+        }
+        ::placeholder {
+            color: $secondary-grey;
+        }
+        .input-type-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            font-size: .9em;
+            align-items: center;
+            .article, .image, .video {
+                margin-right: 20px;
+                color: $secondary-grey;
+                font-size: .9em;
+                cursor: pointer;
+                span {
+                    color: $primary-black; 
+                }
+            }
+            .submit {
+                margin-left: auto;
+                border: none;
+                background-color: transparent;
+                color: $theme-primary;
+            }
+        }
+    }
+}

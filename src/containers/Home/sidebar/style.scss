@@ -1,0 +1,14 @@
+.theme-sidebar {
+    position: sticky;
+      top: 95px;
+      flex: 0.2 1;
+      height: -moz-fit-content;
+      height: fit-content;
+      background-color: white;
+  }
+
+  @media (max-width:830px)  {
+    .theme-sidebar {
+      display: none;
+    }
+  }
